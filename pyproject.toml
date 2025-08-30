@@ -14,7 +14,6 @@ readme = "README.md"
 classifiers = [
     "Development Status :: 1 - Planning",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
@@ -36,6 +35,8 @@ wynn-leaderboards = "cli:leaderboards"
 [project.optional-dependencies]
 dev = [
     "pytest>=8.4.1",
+    "flake8>=7.3.0",
+    "flake8-pyproject",
 ]
 
 [tool.pytest.ini_options]
@@ -53,4 +54,18 @@ norecursedirs = [
 ]
 pythonpath = [
     "src",
+]
+
+[tool.flake8]
+max-line-length = 88
+exclude = [
+    ".git",
+    "dist",
+    "build",
+    ".venv",
+    "__pycache__",
+]
+extend-ignore = [
+    "E203",
+    "W503",
 ]
